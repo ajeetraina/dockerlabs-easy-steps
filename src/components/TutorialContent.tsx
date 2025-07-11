@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ReactMarkdown from 'react-markdown';
+import { modelRunnerContent } from './ModelRunnerContent';
 
 interface TutorialContentProps {
   currentTopic: string;
@@ -342,87 +343,7 @@ volumes:
       language: "yaml"
     }
   },
-  "model-runner": {
-    title: "AI Model Runner in Docker Desktop",
-    description: "Run AI models locally using Docker Desktop",
-    duration: "30 min",
-    difficulty: "Intermediate",
-    content: `
-Docker Desktop's Model Runner feature allows you to easily deploy and run AI models locally, providing a simple way to integrate machine learning into your applications.
-
-## What is Model Runner?
-
-Model Runner is a Docker Desktop feature that simplifies running AI/ML models in containers. It provides pre-configured environments for popular machine learning frameworks and models.
-
-## Key Features
-
-### Pre-built Images
-Access optimized Docker images with popular ML frameworks like TensorFlow, PyTorch, and scikit-learn.
-
-### GPU Support
-Leverage GPU acceleration for faster model inference and training.
-
-### Model Versioning
-Manage different versions of your models with ease.
-
-### API Integration
-Expose models as REST APIs for easy integration with applications.
-
-## Supported Frameworks
-
-Model Runner supports various AI/ML frameworks:
-- **TensorFlow**: Deep learning and neural networks
-- **PyTorch**: Dynamic neural networks and research
-- **scikit-learn**: Traditional machine learning algorithms
-- **Hugging Face**: Natural language processing models
-- **ONNX**: Cross-platform model format
-
-## Getting Started
-
-### Step 1: Enable Model Runner
-Access Model Runner through Docker Desktop's extensions marketplace.
-
-### Step 2: Choose a Model
-Browse available models or import your own trained models.
-
-### Step 3: Configure Resources
-Set appropriate CPU, memory, and GPU allocations.
-
-### Step 4: Deploy and Test
-Start your model container and test with sample data.
-
-## Use Cases
-
-- **Local Development**: Test ML models without cloud dependencies
-- **Prototyping**: Quickly experiment with different models
-- **Production**: Deploy models in containerized environments
-- **Edge Computing**: Run models on edge devices
-    `,
-    codeExample: {
-      title: "Running a TensorFlow Model",
-      description: "Deploy a pre-trained model with Model Runner",
-      code: `# Pull TensorFlow Serving image
-docker pull tensorflow/serving
-
-# Run a model server
-docker run -d --name tf-serving \\
-  -p 8501:8501 \\
-  -v /path/to/model:/models/my_model \\
-  -e MODEL_NAME=my_model \\
-  tensorflow/serving
-
-# Test the model API
-curl -d '{"instances": [1.0, 2.0, 5.0]}' \\
-  -X POST http://localhost:8501/v1/models/my_model:predict
-
-# View running models
-docker ps
-
-# Check model logs
-docker logs tf-serving`,
-      language: "bash"
-    }
-  },
+  "model-runner": modelRunnerContent,
   "mcp-toolkit": {
     title: "Docker MCP Toolkit",
     description: "Model Context Protocol integration with Docker",
