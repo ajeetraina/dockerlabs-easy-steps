@@ -6,6 +6,15 @@
 
 ## Local Development
 
+Clone the repo and run the following command 
+
+```
+git clone https://github.com/ajeetraina/dockerlabs-easy-steps
+cd dockerlabs-easy-steps
+```
+
+## Install the dependencies
+
 ```
 npm i
 ```
