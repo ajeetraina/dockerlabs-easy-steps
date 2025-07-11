@@ -5,7 +5,7 @@ import { TutorialContent } from "@/components/TutorialContent";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 const Index = () => {
-  const [currentTopic, setCurrentTopic] = useState("introduction");
+  const [currentTopic, setCurrentTopic] = useState("docker-desktop-intro");
 
   return (
     <SidebarProvider>

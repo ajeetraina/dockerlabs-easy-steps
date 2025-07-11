@@ -13,13 +13,24 @@ const tutorialSections = [
     title: "Getting Started",
     icon: PlayCircle,
     items: [
-      { id: "introduction", title: "What is Docker?", completed: false },
-      { id: "installation", title: "Installation", completed: false },
-      { id: "first-container", title: "Your First Container", completed: false },
+      { id: "docker-desktop-intro", title: "What is Docker Desktop?", completed: false },
+      { id: "install-windows", title: "Docker Desktop for Windows", completed: false },
+      { id: "install-mac", title: "Docker Desktop for macOS", completed: false },
+      { id: "install-linux", title: "Docker Desktop for Linux", completed: false },
     ]
   },
   {
-    title: "Docker Basics",
+    title: "Docker Desktop Features",
+    icon: Layers,
+    items: [
+      { id: "docker-compose", title: "Docker Compose", completed: false },
+      { id: "model-runner", title: "AI Model Runner", completed: false },
+      { id: "mcp-toolkit", title: "Docker MCP Toolkit", completed: false },
+      { id: "docker-extensions", title: "Docker Extensions", completed: false },
+    ]
+  },
+  {
+    title: "Container Basics",
     icon: Book,
     items: [
       { id: "images-containers", title: "Images & Containers", completed: false },
@@ -28,8 +39,8 @@ const tutorialSections = [
     ]
   },
   {
-    title: "Intermediate",
-    icon: Layers,
+    title: "Development Workflow",
+    icon: Terminal,
     items: [
       { id: "volumes", title: "Volumes & Data", completed: false },
       { id: "networking", title: "Docker Networking", completed: false },
@@ -37,27 +48,18 @@ const tutorialSections = [
     ]
   },
   {
-    title: "Advanced Topics",
-    icon: Terminal,
-    items: [
-      { id: "docker-compose", title: "Docker Compose", completed: false },
-      { id: "orchestration", title: "Container Orchestration", completed: false },
-      { id: "security", title: "Security Best Practices", completed: false },
-    ]
-  },
-  {
-    title: "Production",
+    title: "Production Ready",
     icon: Cloud,
     items: [
+      { id: "security", title: "Security Best Practices", completed: false },
       { id: "deployment", title: "Production Deployment", completed: false },
       { id: "monitoring", title: "Monitoring & Logging", completed: false },
-      { id: "scaling", title: "Scaling Applications", completed: false },
     ]
   }
 ];
 
 export function Sidebar({ currentTopic, onTopicChange }: SidebarProps) {
-  const [expandedSections, setExpandedSections] = useState<string[]>(["Getting Started", "Docker Basics"]);
+  const [expandedSections, setExpandedSections] = useState<string[]>(["Getting Started", "Docker Desktop Features"]);
 
   const toggleSection = (sectionTitle: string) => {
     setExpandedSections(prev => 
